@@ -1,10 +1,13 @@
 const path = require('path');
 
 const cors = require('cors');
+const helmet = require('helmet');
 const morgan = require('morgan');
 const express = require('express');
 
 const app = express();
+
+app.use(helmet());
 
 app.use(
   cors({

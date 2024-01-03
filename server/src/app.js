@@ -31,11 +31,11 @@ app.use(passport.session());
 
 app.use('/auth', authRoutes);
 
-// app.get('/*', (req, res) => {
-//   res.sendFile(path.join(__dirname, '..', 'public'));
-// });
-app.get('/', (req, res) => {
-  res.send('This is the home page');
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(__dirname, '..', 'public'));
 });
+// app.get('/', (req, res) => {
+//   res.send('This is the home page');
+// });
 
 module.exports = app;

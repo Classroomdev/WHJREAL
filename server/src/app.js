@@ -8,6 +8,7 @@ const cookieSession = require('cookie-session');
 require('dotenv').config();
 
 const authRoutes = require('./routes/auth');
+const userRoutes = require('./routes/users/users.router');
 const passportSetup = require('./services/passport-setup');
 
 const app = express();
@@ -30,6 +31,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use('/auth', authRoutes);
+app.use('/users', userRoutes);
 
 app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, '..', 'public'));

@@ -4,6 +4,6 @@ const { httpGetUserById } = require('./users.controller');
 
 const usersRouter = express.Router();
 
-usersRouter.get('/one', httpGetUserById);
+usersRouter.get('/:id', httpGetUserById);
 
 module.exports = usersRouter;

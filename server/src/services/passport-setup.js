@@ -1,5 +1,5 @@
 const passport = require('passport');
-const User = require('../models/user-model');
+const User = require('../models/users/users.mongo');
 const GoogleStrategy = require('passport-google-oauth20');
 require('dotenv').config();
 

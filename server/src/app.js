@@ -7,8 +7,8 @@ const passport = require('passport');
 const cookieSession = require('cookie-session');
 require('dotenv').config();
 
+const api = require('./routes/api');
 const authRoutes = require('./routes/auth');
-const userRoutes = require('./routes/users/users.router');
 const passportSetup = require('./services/passport-setup');
 
 const app = express();
@@ -31,10 +31,11 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use('/auth', authRoutes);
-app.use('/users', userRoutes);
+
+app.use('/api', api);
 
 app.get('/*', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', 'public'));
+  res.sendFile(path.join(__dirname, '..', 'public', 'index.html'));
 });
 // app.get('/', (req, res) => {
 //   res.send('This is the home page');

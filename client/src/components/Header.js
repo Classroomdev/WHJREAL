@@ -3,6 +3,7 @@ import { Link, Routes, Route, Navigate } from 'react-router-dom';
 import Home from '../pages/Home';
 import Profile from '../pages/Profile';
 import GoogleOuathLogin from './GoogleOuathLogin';
+import InvalidUser from '../pages/InvalidUser';
 
 function Header() {
   const UserId = localStorage.getItem('userId');
@@ -34,6 +35,10 @@ function Header() {
         <Route
           path='/users/:id'
           element={<Profile />}
+        />
+        <Route
+          path='/usernotfound'
+          element={<InvalidUser />}
         />
       </Routes>
     </>

@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
-function GoogleOuathLogin() {
-  console.log('this component is being reached');
+async function GoogleOuathLogin() {
+  useEffect(() => {
+    console.log('GoogleOuathLogin component is being reached');
+    // Additional logic if needed
+  }, []);
 }
 
 export default GoogleOuathLogin;

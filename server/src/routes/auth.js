@@ -19,7 +19,8 @@ router.get(
     failureRedirect: '/login',
   }),
   (req, res) => {
-    res.json({ userId: req.user.id });
+    const userId = req.user.id;
+    res.redirect(`/?userId=${userId}`);
   }
 );
 

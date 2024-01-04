@@ -2,11 +2,11 @@ import React from 'react';
 import { Link, Routes, Route, Navigate } from 'react-router-dom';
 import Home from '../pages/Home';
 import Profile from '../pages/Profile';
-import { httpGetUserId } from '../hooks/requests';
 import GoogleOuathLogin from './GoogleOuathLogin';
 
 function Header() {
-  const id = 1;
+  const UserId = localStorage.getItem('userId');
+  const id = UserId;
   return (
     <>
       <nav>
@@ -15,7 +15,7 @@ function Header() {
             <Link to='/'>Home</Link>
           </li>
           <li>
-            <Link to='/auth/google'>Authenticate with Google</Link>
+            <a href='/auth/google'>Authenticate with Google</a>
           </li>
           <li>
             <Link to={`/users/${id}`}>Profile</Link>
@@ -28,7 +28,7 @@ function Header() {
           element={<Home />}
         />
         <Route
-          path='/auth/google'
+          path='/auth/google/callback'
           element={<GoogleOuathLogin />}
         />
         <Route

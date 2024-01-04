@@ -19,7 +19,7 @@ router.get(
     failureRedirect: '/login',
   }),
   (req, res) => {
-    res.redirect('/');
+    res.json({ userId: req.user.id });
   }
 );
 

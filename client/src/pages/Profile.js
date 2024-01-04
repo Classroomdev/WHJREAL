@@ -5,7 +5,7 @@ import { httpGetUserById } from '../hooks/requests';
 function Profile() {
   const [profile, setProfile] = useState(null);
 
-  const id = localStorage.getItem('userId');
+  const { id } = useParams();
 
   const getUser = async () => {
     const user = await httpGetUserById(id);

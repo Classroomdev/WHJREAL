@@ -53,7 +53,12 @@ async function updateJobById(jobId, updatedJob) {
   }
 }
 
+async function getJobById(jobId) {
+  return await Job.findOne({ jobId }, { _id: 0, __v: 0 });
+}
+
 module.exports = {
   createNewJob,
   updateJobById,
+  getJobById,
 };

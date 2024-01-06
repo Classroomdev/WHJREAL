@@ -1,19 +1,35 @@
-import React, { useState } from 'react';
-import { httpUpdateJob } from '../hooks/requests';
+import React, { useState, useEffect } from 'react';
+import { httpUpdateJob, httpGetJobById } from '../hooks/requests';
 import { useNavigate, useParams } from 'react-router-dom';
 
 const UpdateJob = () => {
   const { id } = useParams();
   const navigate = useNavigate();
+  const [job, setJob] = useState(null);
   const [formData, setFormData] = useState({
     companyName: '',
     jobTitle: '',
     jobDescription: '',
-    jobType: '',
-    jobLocation: '',
+    jobType: 'internship',
+    jobLocation: 'remote',
     jobApplicationLink: '',
-    jobMethod: 'internship', // Default value
   });
+
+  useEffect(() => {
+    const getJob = async () => {
+      const fetchedJob = await httpGetJobById(id);
+      setJob(fetchedJob);
+      setFormData({
+        companyName: fetchedJob.companyName,
+        jobTitle: fetchedJob.jobTitle,
+        jobDescription: fetchedJob.jobDescription,
+        jobType: fetchedJob.jobType,
+        jobLocation: fetchedJob.jobLocation,
+        jobApplicationLink: fetchedJob.jobApplicationLink,
+      });
+    };
+    getJob();
+  }, [id]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -52,6 +68,10 @@ const UpdateJob = () => {
       jobType: 'internship',
     });
   };
+
+  if (!job) {
+    return <p>Loading!</p>;
+  }
 
   return (
     <form onSubmit={submitNewJob}>

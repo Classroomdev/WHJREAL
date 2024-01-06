@@ -11,7 +11,6 @@ const CreateNewJob = () => {
     jobType: '',
     jobLocation: '',
     jobApplicationLink: '',
-    jobMethod: 'internship', // Default value
   });
 
   const handleChange = (e) => {

@@ -26,7 +26,7 @@ const jobsSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  linkToJobApplication: {
+  jobApplicationLink: {
     type: String,
     required: true,
   },

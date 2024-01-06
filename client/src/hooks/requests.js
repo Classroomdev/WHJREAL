@@ -5,6 +5,11 @@ async function httpGetUserById(id) {
   return await response.json();
 }
 
+async function httpGetJobById(id) {
+  const response = await fetch(`${API_URL}/jobs/${id}`);
+  return await response.json();
+}
+
 async function httpCreateNewJob(job) {
   try {
     return await fetch(`${API_URL}/jobs/new`, {
@@ -37,4 +42,4 @@ async function httpUpdateJob(id, job) {
   }
 }
 
-export { httpGetUserById, httpCreateNewJob, httpUpdateJob };
+export { httpGetUserById, httpCreateNewJob, httpUpdateJob, httpGetJobById };

@@ -5,6 +5,11 @@ async function httpGetUserById(id) {
   return await response.json();
 }
 
+async function httpGetJobById(id) {
+  const response = await fetch(`${API_URL}/jobs/${id}`);
+  return await response.json();
+}
+
 async function httpCreateNewJob(job) {
   try {
     return await fetch(`${API_URL}/jobs/new`, {
@@ -21,4 +26,20 @@ async function httpCreateNewJob(job) {
   }
 }
 
-export { httpGetUserById, httpCreateNewJob };
+async function httpUpdateJob(id, job) {
+  try {
+    return await fetch(`${API_URL}/jobs/${id}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(job),
+    });
+  } catch (error) {
+    return {
+      ok: false,
+    };
+  }
+}
+
+export { httpGetUserById, httpCreateNewJob, httpUpdateJob, httpGetJobById };

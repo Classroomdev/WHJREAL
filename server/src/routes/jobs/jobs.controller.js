@@ -1,4 +1,8 @@
-const { createNewJob, updateJobById } = require('../../models/jobs/jobs.model');
+const {
+  createNewJob,
+  updateJobById,
+  getJobById,
+} = require('../../models/jobs/jobs.model');
 
 async function httpAddNewLaunch(req, res) {
   try {
@@ -24,7 +28,14 @@ async function httpUpdateJobById(req, res) {
   }
 }
 
+async function httpGetJobById(req, res) {
+  const id = req.params.id;
+  const job = await getJobById(id);
+  return res.status(200).json(job);
+}
+
 module.exports = {
   httpAddNewLaunch,
   httpUpdateJobById,
+  httpGetJobById,
 };

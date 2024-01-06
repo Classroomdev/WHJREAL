@@ -5,6 +5,7 @@ import Profile from '../pages/Profile';
 import GoogleOuathLogin from './GoogleOuathLogin';
 import InvalidUser from '../pages/InvalidUser';
 import CreateNewJob from '../pages/createNewJob';
+import UpdateJob from '../pages/updateJob';
 
 function Header() {
   const UserId = localStorage.getItem('userId');
@@ -21,6 +22,9 @@ function Header() {
           </li>
           <li>
             <Link to={`/users/${id}`}>Profile</Link>
+          </li>
+          <li>
+            <Link to='/jobs/new'>Create a new job</Link>
           </li>
         </ul>
       </nav>
@@ -44,6 +48,10 @@ function Header() {
         <Route
           path='/jobs/new'
           element={<CreateNewJob />}
+        />
+        <Route
+          path='/jobs/:id'
+          element={<UpdateJob />}
         />
       </Routes>
     </>

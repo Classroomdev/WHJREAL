@@ -4,6 +4,7 @@ import Home from '../pages/Home';
 import Profile from '../pages/Profile';
 import GoogleOuathLogin from './GoogleOuathLogin';
 import InvalidUser from '../pages/InvalidUser';
+import CreateNewJob from '../pages/createNewJob';
 
 function Header() {
   const UserId = localStorage.getItem('userId');
@@ -39,6 +40,10 @@ function Header() {
         <Route
           path='/usernotfound'
           element={<InvalidUser />}
+        />
+        <Route
+          path='/jobs/new'
+          element={<CreateNewJob />}
         />
       </Routes>
     </>

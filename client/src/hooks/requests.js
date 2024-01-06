@@ -5,4 +5,20 @@ async function httpGetUserById(id) {
   return await response.json();
 }
 
-export { httpGetUserById };
+async function httpCreateNewJob(job) {
+  try {
+    return await fetch(`${API_URL}/jobs/new`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(job),
+    });
+  } catch (error) {
+    return {
+      ok: false,
+    };
+  }
+}
+
+export { httpGetUserById, httpCreateNewJob };

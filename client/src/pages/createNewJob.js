@@ -46,10 +46,9 @@ const CreateNewJob = () => {
       companyName: '',
       jobTitle: '',
       jobDescription: '',
-      jobType: '',
-      jobLocation: '',
+      jobLocation: 'remote',
       jobApplicationLink: '',
-      jobMethod: 'internship',
+      jobType: 'internship',
     });
 
     navigate('/');
@@ -90,17 +89,6 @@ const CreateNewJob = () => {
       </label>
 
       <label>
-        Job Location:
-        <input
-          type='text'
-          name='jobLocation'
-          value={formData.jobLocation}
-          onChange={handleChange}
-          required
-        />
-      </label>
-
-      <label>
         Link To Job Application:
         <input
           type='url'
@@ -115,13 +103,27 @@ const CreateNewJob = () => {
         Job Type:
         <select
           name='jobType'
-          value={formData.jobMethod}
+          value={formData.jobType}
           onChange={handleChange}
           required
         >
           <option value='internship'>Internship</option>
           <option value='junior'>Junior</option>
           <option value='intermediate'>Intermediate</option>
+        </select>
+      </label>
+
+      <label>
+        Job Location:
+        <select
+          name='jobLocation'
+          value={formData.jobLocation}
+          onChange={handleChange}
+          required
+        >
+          <option value='remote'>Remote</option>
+          <option value='hybrid'>Hybrid</option>
+          <option value='on-site'>On site</option>
         </select>
       </label>
 

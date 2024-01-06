@@ -34,6 +34,26 @@ async function createNewJob(job) {
   await saveNewJob(newJob);
 }
 
+async function updateJobById(jobId, updatedJob) {
+  const existingJob = await Job.findOne({ jobId });
+
+  if (existingJob) {
+    await Job.findOneAndUpdate(
+      {
+        jobId,
+      },
+      updatedJob,
+      {
+        new: true,
+        upsert: true,
+      }
+    );
+  } else {
+    console.error('Job does not exist');
+  }
+}
+
 module.exports = {
   createNewJob,
+  updateJobById,
 };

@@ -2,6 +2,7 @@ const {
   createNewJob,
   updateJobById,
   getJobById,
+  getAllJobs,
 } = require('../../models/jobs/jobs.model');
 
 async function httpAddNewLaunch(req, res) {
@@ -34,8 +35,19 @@ async function httpGetJobById(req, res) {
   return res.status(200).json(job);
 }
 
+async function httpGetAllJobs(req, res) {
+  try {
+    const jobs = await getAllJobs();
+    return res.status(200).json(jobs);
+  } catch (err) {
+    console.log(err);
+    return res.status(500).json({ error: 'Internal Server Error' });
+  }
+}
+
 module.exports = {
   httpAddNewLaunch,
   httpUpdateJobById,
   httpGetJobById,
+  httpGetAllJobs,
 };

@@ -42,4 +42,15 @@ async function httpUpdateJob(id, job) {
   }
 }
 
-export { httpGetUserById, httpCreateNewJob, httpUpdateJob, httpGetJobById };
+async function httpGetAllJobs() {
+  const response = await fetch(`${API_URL}/jobs/all`);
+  return await response.json();
+}
+
+export {
+  httpGetUserById,
+  httpCreateNewJob,
+  httpUpdateJob,
+  httpGetJobById,
+  httpGetAllJobs,
+};

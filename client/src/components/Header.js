@@ -7,6 +7,7 @@ import InvalidUser from '../pages/InvalidUser';
 import CreateNewJob from '../pages/createNewJob';
 import UpdateJob from '../pages/updateJob';
 import JobsIndex from '../pages/JobsIndex';
+import Job from '../pages/Job';
 
 function Header() {
   const UserId = localStorage.getItem('userId');
@@ -57,6 +58,10 @@ function Header() {
         <Route
           path='/jobs'
           element={<JobsIndex />}
+        />
+        <Route
+          path='/jobs/index/:id'
+          element={<Job />}
         />
       </Routes>
     </>

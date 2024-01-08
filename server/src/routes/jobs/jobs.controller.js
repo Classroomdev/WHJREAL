@@ -5,7 +5,7 @@ const {
   getAllJobs,
 } = require('../../models/jobs/jobs.model');
 
-async function httpAddNewLaunch(req, res) {
+async function httpAddNewJob(req, res) {
   try {
     const newJob = req.body;
     await createNewJob(newJob);
@@ -46,7 +46,7 @@ async function httpGetAllJobs(req, res) {
 }
 
 module.exports = {
-  httpAddNewLaunch,
+  httpAddNewJob,
   httpUpdateJobById,
   httpGetJobById,
   httpGetAllJobs,

@@ -1,7 +1,7 @@
 const express = require('express');
 
 const {
-  httpAddNewLaunch,
+  httpAddNewJob,
   httpUpdateJobById,
   httpGetJobById,
   httpGetAllJobs,
@@ -10,7 +10,7 @@ const {
 const jobsRouter = express.Router();
 
 jobsRouter.get('/all', httpGetAllJobs);
-jobsRouter.post('/new', httpAddNewLaunch);
+jobsRouter.post('/new', httpAddNewJob);
 jobsRouter.post('/:id', httpUpdateJobById);
 jobsRouter.get('/:id', httpGetJobById);
 

@@ -39,7 +39,6 @@ async function httpGetJobById(req, res) {
 
 async function httpGetAllJobs(req, res) {
   try {
-    console.log(req.query);
     const { skip, limit } = getPagination(req.query);
     const jobs = await getAllJobs(skip, limit);
     return res.status(200).json(jobs);

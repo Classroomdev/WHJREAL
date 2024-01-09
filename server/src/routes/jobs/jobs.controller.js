@@ -5,6 +5,8 @@ const {
   getAllJobs,
 } = require('../../models/jobs/jobs.model');
 
+const { getPagination } = require('../../services/query');
+
 async function httpAddNewJob(req, res) {
   try {
     const newJob = req.body;
@@ -37,7 +39,9 @@ async function httpGetJobById(req, res) {
 
 async function httpGetAllJobs(req, res) {
   try {
-    const jobs = await getAllJobs();
+    console.log(req.query);
+    const { skip, limit } = getPagination(req.query);
+    const jobs = await getAllJobs(skip, limit);
     return res.status(200).json(jobs);
   } catch (err) {
     console.log(err);

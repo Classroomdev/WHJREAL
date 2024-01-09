@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link, Routes, Route, Navigate } from 'react-router-dom';
 import Home from '../pages/Home';
-import Profile from '../pages/Profile';
+import Profile from '../pages/users/Profile';
 import GoogleOuathLogin from './GoogleOuathLogin';
-import InvalidUser from '../pages/InvalidUser';
-import CreateNewJob from '../pages/createNewJob';
-import UpdateJob from '../pages/updateJob';
-import JobsIndex from '../pages/JobsIndex';
-import Job from '../pages/Job';
+import InvalidUser from '../pages/users/InvalidUser';
+import CreateNewJob from '../pages/jobs/createNewJob';
+import UpdateJob from '../pages/jobs/updateJob';
+import JobsIndex from '../pages/jobs/JobsIndex';
+import Job from '../pages/jobs/Job';
 
 function Header() {
   const UserId = localStorage.getItem('userId');
@@ -56,7 +56,7 @@ function Header() {
           element={<UpdateJob />}
         />
         <Route
-          path='/jobs'
+          path='/jobs/all'
           element={<JobsIndex />}
         />
         <Route

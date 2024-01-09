@@ -57,8 +57,11 @@ async function getJobById(jobId) {
   return await Job.findOne({ jobId }, { _id: 0, __v: 0 });
 }
 
-async function getAllJobs() {
-  return await Job.find({}, { _id: 0, __v: 0 }).sort({ jobId: -1 });
+async function getAllJobs(skip, limit) {
+  return await Job.find({}, { _id: 0, __v: 0 })
+    .sort({ jobId: -1 })
+    .skip(skip)
+    .limit(limit);
 }
 
 module.exports = {

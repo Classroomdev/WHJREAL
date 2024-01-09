@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { httpGetUserById } from '../hooks/requests';
+import { httpGetUserById } from '../../hooks/requests';
 
 function Profile() {
   const [profile, setProfile] = useState(null);

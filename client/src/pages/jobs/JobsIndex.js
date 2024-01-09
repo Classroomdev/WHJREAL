@@ -37,8 +37,6 @@ function JobsIndex() {
     handlePageChange(page + 1);
   };
 
-  console.log(jobs);
-
   return (
     <>
       <button

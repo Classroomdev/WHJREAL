@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { httpGetJobById } from '../hooks/requests';
+import { httpGetJobById } from '../../hooks/requests';
 
 function Job() {
   const [job, setJob] = useState({});

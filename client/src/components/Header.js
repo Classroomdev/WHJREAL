@@ -56,7 +56,7 @@ function Header() {
           element={<UpdateJob />}
         />
         <Route
-          path='/jobs'
+          path='/jobs/all'
           element={<JobsIndex />}
         />
         <Route

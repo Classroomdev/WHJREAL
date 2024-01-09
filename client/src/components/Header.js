@@ -15,14 +15,19 @@ function Header() {
   return (
     <>
       <nav class='border-b'>
-        <div class='flex justify-between w-9/10 mx-auto text-xl'>
-          <Link to='/'>We Hire Juniors</Link>
-          <ul class='flex'>
+        <div class='flex justify-between w-9/10 mx-auto my-3 text-xl'>
+          <Link
+            to='/'
+            class='font-bold'
+          >
+            We Hire Juniors
+          </Link>
+          <ul class='flex justify-between w-1/5'>
             <li>
               <Link to={`/users/${id}`}>Profile</Link>
             </li>
             <li>
-              <Link to='/jobs/new'>Post a Job</Link>
+              <Link to='/jobs/all'>Jobs</Link>
             </li>
             <li>
               <Link to='/login'>Log in</Link>

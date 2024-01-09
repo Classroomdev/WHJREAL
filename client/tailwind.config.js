@@ -4,6 +4,7 @@ module.exports = {
   theme: {
     extend: {
       width: () => ({
+        '1/5': '20%',
         '9/10': '90%',
       }),
     },

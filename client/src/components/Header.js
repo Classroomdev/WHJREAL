@@ -14,21 +14,21 @@ function Header() {
   const id = UserId;
   return (
     <>
-      <nav>
-        <ul>
-          <li>
-            <Link to='/'>Home</Link>
-          </li>
-          <li>
-            <a href='/auth/google'>Authenticate with Google</a>
-          </li>
-          <li>
-            <Link to={`/users/${id}`}>Profile</Link>
-          </li>
-          <li>
-            <Link to='/jobs/new'>Create a new job</Link>
-          </li>
-        </ul>
+      <nav class='border-b'>
+        <div class='flex justify-between w-9/10 mx-auto text-xl'>
+          <Link to='/'>We Hire Juniors</Link>
+          <ul class='flex'>
+            <li>
+              <Link to={`/users/${id}`}>Profile</Link>
+            </li>
+            <li>
+              <Link to='/jobs/new'>Post a Job</Link>
+            </li>
+            <li>
+              <Link to='/login'>Log in</Link>
+            </li>
+          </ul>
+        </div>
       </nav>
       <Routes>
         <Route

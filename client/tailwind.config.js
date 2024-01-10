@@ -7,6 +7,9 @@ module.exports = {
         '1/5': '20%',
         '9/10': '90%',
       }),
+      backgroundColor: () => ({
+        hero: '#FAFAFA',
+      }),
     },
   },
   plugins: [],

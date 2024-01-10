@@ -15,14 +15,14 @@ function Header() {
   return (
     <>
       <nav class='border-b'>
-        <div class='flex justify-between w-9/10 mx-auto my-3 text-xl'>
+        <div class='flex justify-between w-9/10 mx-auto items-center  my-3'>
           <Link
             to='/'
-            class='font-bold'
+            class='font-bold text-2xl'
           >
             We Hire Juniors
           </Link>
-          <ul class='flex justify-between w-1/5'>
+          <ul class='flex justify-between w-1/5 text-gray-600 text-lg'>
             <li>
               <Link to={`/users/${id}`}>Profile</Link>
             </li>
@@ -30,7 +30,12 @@ function Header() {
               <Link to='/jobs/all'>Jobs</Link>
             </li>
             <li>
-              <Link to='/login'>Log in</Link>
+              <Link
+                to='/login'
+                class='bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded'
+              >
+                Sign Up
+              </Link>
             </li>
           </ul>
         </div>

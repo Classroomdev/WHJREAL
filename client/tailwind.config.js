@@ -6,9 +6,13 @@ module.exports = {
       width: () => ({
         '1/5': '20%',
         '9/10': '90%',
+        '3/10': '30%',
       }),
       backgroundColor: () => ({
         hero: '#FAFAFA',
+      }),
+      fontWeight: () => ({
+        extrabold: '950',
       }),
     },
   },

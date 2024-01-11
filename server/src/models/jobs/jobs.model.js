@@ -64,9 +64,14 @@ async function getAllJobs(skip, limit) {
     .limit(limit);
 }
 
+async function getFeaturedJobs() {
+  return await Job.find({}, { _id: 0, __v: 0 }).sort({ jobId: -1 }).limit(6);
+}
+
 module.exports = {
   createNewJob,
   updateJobById,
   getJobById,
   getAllJobs,
+  getFeaturedJobs,
 };

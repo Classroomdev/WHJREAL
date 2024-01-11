@@ -1,5 +1,6 @@
 const path = require('path');
 
+const cors = require('cors');
 const helmet = require('helmet');
 const morgan = require('morgan');
 const express = require('express');
@@ -12,6 +13,12 @@ const authRoutes = require('./routes/auth');
 const passportSetup = require('./services/passport-setup');
 
 const app = express();
+
+app.use(
+  cors({
+    origin: 'http://localhost:3000',
+  })
+);
 
 app.use(helmet());
 

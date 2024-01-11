@@ -47,10 +47,16 @@ async function httpGetAllJobs() {
   return await response.json();
 }
 
+async function httpGetFeaturedJobs() {
+  const response = await fetch(`${API_URL}/jobs/featured`);
+  return await response.json();
+}
+
 export {
   httpGetUserById,
   httpCreateNewJob,
   httpUpdateJob,
   httpGetJobById,
   httpGetAllJobs,
+  httpGetFeaturedJobs,
 };

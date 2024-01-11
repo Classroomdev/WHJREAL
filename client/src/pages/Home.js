@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { httpGetFeaturedJobs } from '../hooks/requests';
 import truncateString from '../functions/truncateString';
+import Footer from '../components/Footer';
 
 function Home() {
   const [jobs, setJobs] = useState([]);
@@ -52,7 +53,7 @@ function Home() {
           </Link>
         </div>
       </div>
-      <div class='py-16'>
+      <div class='py-16 bg-hero'>
         <div class='mx-auto max-w-2xl md:text-center'>
           <h2 class='font-display font-bold text-5xl tracking-tighter text-gray-800'>
             Featured Jobs
@@ -61,7 +62,7 @@ function Home() {
             Look through some of our featured jobs
           </p>
         </div>
-        <div className='mx-auto w-4/5 pt-16 flex flex-wrap justify-between'>
+        <div class='mx-auto w-4/5 pt-16 flex flex-wrap justify-between'>
           {jobs.map((job) => (
             <div class='w-3/10 border-r border-b border-l border-gray-400 lg:border-t lg:border-gray-400 bg-white rounded p-4 flex flex-col justify-between mb-4 min-h-70'>
               <div class='flex flex-col'>
@@ -72,7 +73,7 @@ function Home() {
                     alt='Avatar of Jonathan Reinink'
                   />
                   <div class='text-sm'>
-                    <p class='text-gray-900 leading-none'>Jonathan Reinink</p>
+                    <p class='text-gray-900 leading-none'>{job.companyName}</p>
                     <p class='text-gray-600'>Aug 18</p>
                   </div>
                 </div>
@@ -110,6 +111,7 @@ function Home() {
           ))}
         </div>
       </div>
+      <Footer />
     </>
   );
 }

@@ -24,7 +24,7 @@ function Home() {
         >
           <img
             class='w-6 h-6'
-            src='https://www.svgrepo.com/show/475656/google-color.svg'
+            src='./svg/google-color.svg'
             loading='lazy'
             alt='google logo'
           />

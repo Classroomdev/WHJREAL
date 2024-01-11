@@ -10,7 +10,6 @@ function App() {
   return (
     <>
       <Header />
-      <p className='text-yellow-700'>Hello World</p>
     </>
   );
 }

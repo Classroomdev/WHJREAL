@@ -10,6 +10,9 @@ module.exports = {
       backgroundColor: () => ({
         hero: '#FAFAFA',
       }),
+      fontWeight: () => ({
+        extrabold: '950',
+      }),
     },
   },
   plugins: [],

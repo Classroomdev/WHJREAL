@@ -14,6 +14,12 @@ const passportSetup = require('./services/passport-setup');
 
 const app = express();
 
+app.use(
+  cors({
+    origin: 'http://localhost:3000',
+  })
+);
+
 app.use(helmet());
 
 app.use(morgan('combined'));

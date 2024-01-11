@@ -106,9 +106,9 @@ const CreateNewJob = () => {
           onChange={handleChange}
           required
         >
-          <option value='internship'>Internship</option>
-          <option value='junior'>Junior</option>
-          <option value='intermediate'>Intermediate</option>
+          <option value='internship'>internship</option>
+          <option value='junior'>junior</option>
+          <option value='intermediate'>intermediate</option>
         </select>
       </label>
 
@@ -120,9 +120,9 @@ const CreateNewJob = () => {
           onChange={handleChange}
           required
         >
-          <option value='remote'>Remote</option>
-          <option value='hybrid'>Hybrid</option>
-          <option value='on-site'>On site</option>
+          <option value='remote'>remote</option>
+          <option value='hybrid'>hybrid</option>
+          <option value='on-site'>on site</option>
         </select>
       </label>
 

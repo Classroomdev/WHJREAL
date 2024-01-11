@@ -52,7 +52,7 @@ async function httpGetAllJobs(req, res) {
 async function httpGetFeaturedJobs(req, res) {
   try {
     const jobs = await getFeaturedJobs();
-    return res.status(200).json({ jobs });
+    return res.status(200).json(jobs);
   } catch (err) {
     console.log(err);
     return res.status(500).json({ error: 'Internal Server error' });

@@ -45,7 +45,7 @@ function JobsIndex() {
       <div class='bg-hero py-10'>
         <h1 class='text-5xl font-extrabold tracking-tight text-center'>Jobs</h1>
         <p class='mt-2 text-center text-xl text-gray-700 dark:text-gray-300/75'>
-          Apply for one of jobs below
+          Apply for one of jobs below. Good luck.
         </p>
         <Pagination
           handleNextClick={handleNextClick}

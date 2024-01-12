@@ -53,6 +53,18 @@ function Home() {
           </Link>
         </div>
       </div>
+      <div class='h-screen bg-gradient-to-r from-cyan-500 to-blue-500'>
+        <div class='py-16 w-1/2 md:mx-auto md:text-center xl:max-w-none'>
+          <h2 class='font-display font-bold text-4xl tracking-tighter text-white'>
+            Unlocking Tomorrow's Talent Today: Your Gateway to Exceptional
+            Junior Hires.
+          </h2>
+          <p class='mt-6 text-lg tracking-tight text-blue-100 tracking-wide'>
+            Effortless Hiring, Leave the Rest to Us: Your Time-Saving Solution
+            for Junior Talent Acquisition.
+          </p>
+        </div>
+      </div>
       <div class='py-16 bg-hero'>
         <div class='mx-auto max-w-2xl md:text-center'>
           <h2 class='font-display font-bold text-5xl tracking-tighter text-gray-800'>

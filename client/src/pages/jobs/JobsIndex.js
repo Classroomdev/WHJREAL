@@ -41,35 +41,37 @@ function JobsIndex() {
   };
 
   return (
-    <div class='bg-hero py-10'>
-      <h1 class='text-5xl font-extrabold tracking-tight text-center'>Jobs</h1>
-      <p class='mt-2 text-center text-xl text-gray-700 dark:text-gray-300/75'>
-        Apply for one of jobs below
-      </p>
-      <Pagination
-        handleNextClick={handleNextClick}
-        handlePrevClick={handlePrevClick}
-        marginTop={'40px'}
-        page={page}
-      />
-      <div class='mx-auto w-4/5 py-16 flex flex-wrap justify-between'>
-        {jobs.map((job) => (
-          <JobCard
-            job={job}
-            numberOfTitleCharacters={40}
-            numberOfDescriptionCharacters={400}
-            width={'49%'}
-          />
-        ))}
+    <>
+      <div class='bg-hero py-10'>
+        <h1 class='text-5xl font-extrabold tracking-tight text-center'>Jobs</h1>
+        <p class='mt-2 text-center text-xl text-gray-700 dark:text-gray-300/75'>
+          Apply for one of jobs below
+        </p>
+        <Pagination
+          handleNextClick={handleNextClick}
+          handlePrevClick={handlePrevClick}
+          marginTop={'40px'}
+          page={page}
+        />
+        <div class='mx-auto w-4/5 py-16 flex flex-wrap justify-between'>
+          {jobs.map((job) => (
+            <JobCard
+              job={job}
+              numberOfTitleCharacters={40}
+              numberOfDescriptionCharacters={400}
+              width={'49%'}
+            />
+          ))}
+        </div>
+        <Pagination
+          handleNextClick={handleNextClick}
+          handlePrevClick={handlePrevClick}
+          marginBottom={'40px'}
+          page={page}
+        />
       </div>
-      <Pagination
-        handleNextClick={handleNextClick}
-        handlePrevClick={handlePrevClick}
-        marginBottom={'40px'}
-        page={page}
-      />
       <Footer />
-    </div>
+    </>
   );
 }
 

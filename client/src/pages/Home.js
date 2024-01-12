@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { httpGetFeaturedJobs } from '../hooks/requests';
 import JobCard from '../components/JobCard';
 import Footer from '../components/Footer';
+import advantages from '../hooks/advantages';
 
 function Home() {
   const [jobs, setJobs] = useState([]);
@@ -51,6 +52,29 @@ function Home() {
           >
             Post a Job
           </Link>
+        </div>
+      </div>
+      <div class='h-screen bg-gradient-to-r from-sky-500 to-indigo-500'>
+        <div class='py-16 w-1/2 md:mx-auto md:text-center xl:max-w-none'>
+          <h2 class='font-display font-bold text-4xl tracking-tighter text-white'>
+            Unlocking Tomorrow's Talent Today
+          </h2>
+          <p class='mt-6 text-lg text-blue-100 tracking-wide'>
+            Effortless Hiring, Leave the Rest to Us: Your Time-Saving Solution
+            for Junior Talent Acquisition.
+          </p>
+        </div>
+        <div class='flex flex-wrap justify-between w-9/10 mx-auto'>
+          {advantages.map((advantage) => (
+            <div class='w-2/5 mb-10'>
+              <div class='w-3/4'>
+                <h3 class='text-xl text-white font-extrabold tracking-tight'>
+                  {advantage.title}
+                </h3>
+                <p class='mt-2 text-blue-100'>{advantage.description}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
       <div class='py-16 bg-hero'>

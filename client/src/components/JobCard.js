@@ -1,5 +1,5 @@
 import React from 'react';
-import truncateString from '../functions/truncateString';
+import truncateString from '../resources/truncateString';
 
 function JobCard({ job }) {
   return (

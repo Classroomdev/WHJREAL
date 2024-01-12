@@ -1,9 +1,17 @@
 import React from 'react';
 import truncateString from '../resources/truncateString';
 
-function JobCard({ job }) {
+function JobCard({
+  job,
+  numberOfTitleCharacters,
+  numberOfDescriptionCharacters,
+  width,
+}) {
   return (
-    <div class='w-3/10 border-r border-b border-l border-gray-400 lg:border-t lg:border-gray-400 bg-white rounded p-4 flex flex-col justify-between mb-4 min-h-70'>
+    <div
+      style={{ width: width }}
+      class='border-r border-b border-l border-gray-400 lg:border-t lg:border-gray-400 bg-white rounded p-4 flex flex-col justify-between mb-4 min-h-70'
+    >
       <div class='flex flex-col'>
         <div class='flex items-center'>
           <img
@@ -28,10 +36,10 @@ function JobCard({ job }) {
             This may be useful for something
           </p>
           <div class='text-gray-900 font-bold text-xl mb-2'>
-            {truncateString(job.jobTitle, 25)}
+            {truncateString(job.jobTitle, numberOfTitleCharacters)}
           </div>
           <p class='text-gray-700 text-base'>
-            {truncateString(job.jobDescription, 250)}
+            {truncateString(job.jobDescription, numberOfDescriptionCharacters)}
           </p>
         </div>
       </div>

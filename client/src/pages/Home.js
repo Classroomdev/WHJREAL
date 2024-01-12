@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { httpGetFeaturedJobs } from '../hooks/requests';
 import JobCard from '../components/JobCard';
 import Footer from '../components/Footer';
-import advantages from '../hooks/advantages';
+import advantages from '../resources/advantages';
 
 function Home() {
   const [jobs, setJobs] = useState([]);
@@ -88,7 +88,12 @@ function Home() {
         </div>
         <div class='mx-auto w-4/5 pt-16 flex flex-wrap justify-between'>
           {jobs.map((job) => (
-            <JobCard job={job} />
+            <JobCard
+              job={job}
+              numberOfTitleCharacters={25}
+              numberOfDescriptionCharacters={250}
+              width={'30%'}
+            />
           ))}
         </div>
       </div>

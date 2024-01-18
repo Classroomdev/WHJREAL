@@ -14,6 +14,10 @@ module.exports = {
       fontWeight: () => ({
         extrabold: '950',
       }),
+      plugins: [
+        // ...
+        require('@tailwindcss/forms'),
+      ],
     },
   },
   plugins: [],

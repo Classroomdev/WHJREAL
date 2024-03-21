@@ -5,11 +5,17 @@
 ![Hero section](./assets/home.png)
 
 - Hero section
-  ![Jobs Page](./assets/jobs.png)
+
+![Jobs Page](./assets/jobs.png)
+
 - Jobs page
-  ![Ad Section](./assets/ad.png)
+
+![Ad Section](./assets/ad.png)
+
 - Simple Ad section :)
-  ![Featured jobs](./assets/featured-jobs.png)
+
+![Featured jobs](./assets/featured-jobs.png)
+
 - Jobs posted latest will appear in this section.
 
 ## Current Features

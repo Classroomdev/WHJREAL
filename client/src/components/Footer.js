@@ -6,7 +6,7 @@ function Footer() {
       <div class='mx-auto w-full max-w-screen-xl'>
         <div class='flex justify-between px-4 py-6 lg:py-8 md:grid-cols-3'>
           <div>
-            <h2 class='mb-6 text-sm font-semibold uppercase'>Company</h2>
+            <h2 class='mb-6 text-sm font-semibold uppercase'>HireAJunior</h2>
             <ul class='font-medium'>
               <li class='mb-4'>
                 <a

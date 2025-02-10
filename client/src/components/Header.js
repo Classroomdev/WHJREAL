@@ -20,7 +20,7 @@ function Header() {
             to='/'
             class='font-bold text-2xl'
           >
-            We Hire Juniors
+            We Hire Juniors Also
           </Link>
           <ul class='flex justify-between w-1/5 text-gray-600 text-lg'>
             <li>

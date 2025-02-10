@@ -14,7 +14,7 @@ function JobsIndex() {
 
   const getAllJobs = async () => {
     const response = await fetch(
-      `http://localhost:8000/api/jobs/all?page=${page}`
+      `http://localhost:8080/api/jobs/all?page=${page}`
     );
     const jobs = await response.json();
     setJobs(jobs);

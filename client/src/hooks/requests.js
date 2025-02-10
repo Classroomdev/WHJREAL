@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:8000/api';
+const API_URL = 'http://localhost:8080/api';
 
 async function httpGetUserById(id) {
   const response = await fetch(`${API_URL}/users/${id}`);
@@ -11,6 +11,7 @@ async function httpGetJobById(id) {
 }
 
 async function httpCreateNewJob(job) {
+  console.log('this is reaching here');
   try {
     return await fetch(`${API_URL}/jobs/new`, {
       method: 'POST',

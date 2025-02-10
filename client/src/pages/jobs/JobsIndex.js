@@ -12,13 +12,16 @@ function JobsIndex() {
   const [page, setPage] = useState(1);
   const [jobs, setJobs] = useState([]);
 
-  const getAllJobs = async () => {
-    const response = await fetch(
-      `http://localhost:8080/api/jobs/all?page=${page}`
-    );
-    const jobs = await response.json();
-    setJobs(jobs);
-  };
+  const API_URL =
+  process.env.NODE_ENV === 'production'
+    ? 'https://whjreal-backend.onrender.com'
+    : 'http://localhost:8080';
+
+const getAllJobs = async () => {
+  const response = await fetch(`${API_URL}/api/jobs/all?page=${page}`);
+  const jobs = await response.json();
+  setJobs(jobs);
+};
 
   useEffect(() => {
     getAllJobs();

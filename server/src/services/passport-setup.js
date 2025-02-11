@@ -15,7 +15,7 @@ passport.deserializeUser((id, done) => {
 
 const callbackURL =
   process.env.NODE_ENV === "production"
-    ? "https://www.whjreal-backend.onrender.com/auth/google/callback"
+    ? "https://whjreal-backend.onrender.com/auth/google/callback"
     : "/auth/google/callback";
 
 passport.use(

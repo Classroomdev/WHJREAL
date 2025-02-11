@@ -1,7 +1,7 @@
-const passport = require('passport');
-const User = require('../models/users/users.mongo');
-const GoogleStrategy = require('passport-google-oauth20');
-require('dotenv').config();
+const passport = require("passport");
+const User = require("../models/users/users.mongo");
+const GoogleStrategy = require("passport-google-oauth20");
+require("dotenv").config();
 
 passport.serializeUser((user, done) => {
   done(null, user.id);
@@ -13,17 +13,22 @@ passport.deserializeUser((id, done) => {
   });
 });
 
+const callbackURL =
+  process.env.NODE_ENV === "production"
+    ? "https://www.whjreal-backend.onrender.com"
+    : "/auth/google/callback";
+
 passport.use(
   new GoogleStrategy(
     {
-      callbackURL: '/auth/google/callback',
+      callbackURL: callbackURL,
       clientID: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     },
     (accessToken, refreshToken, profile, done) => {
       User.findOne({ googleid: profile.id }).then((currentUser) => {
         if (currentUser) {
-          console.log('The User is already in the database');
+          console.log("The User is already in the database");
           done(null, currentUser);
         } else {
           new User({
@@ -34,7 +39,7 @@ passport.use(
           })
             .save()
             .then((newUser) => {
-              console.log('A New user has been added');
+              console.log("A New user has been added");
               done(null, newUser);
             });
         }

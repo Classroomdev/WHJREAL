@@ -11,10 +11,8 @@ import JobsIndex from "../pages/jobs/JobsIndex";
 import Job from "../pages/jobs/Job";
 
 function Header() {
-  const UserId = localStorage.getItem("userId");
-  const id = UserId;
-  console.log("id", id);
-  const loggedUser = true;
+  const userId = localStorage.getItem("userId");
+  const loggedUser = userId ? true : false;
 
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isLinksDropdownOpen, setIsLinksDropdownOpen] = useState(false);
@@ -62,7 +60,7 @@ function Header() {
           {/* Profile & Dropdown */}
           <div class="relative flex items-center justify-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
             {/* Button to Toggle Dropdown */}
-            {loggedUser ? (
+            {!loggedUser ? (
               <a
                 href="/auth/google"
                 class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"

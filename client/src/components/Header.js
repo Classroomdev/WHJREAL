@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, Routes, Route, Navigate } from "react-router-dom";
 import clsx from "clsx";
 import Home from "../pages/Home";
@@ -9,10 +9,17 @@ import CreateNewJob from "../pages/jobs/createNewJob";
 import UpdateJob from "../pages/jobs/updateJob";
 import JobsIndex from "../pages/jobs/JobsIndex";
 import Job from "../pages/jobs/Job";
+import { ReactComponent as Bars } from "../../src/utilities/bars.svg";
 
 function Header() {
   const UserId = localStorage.getItem("userId");
   const id = UserId;
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
 
   const links = [
     // { to: `/users/${id}`, text: "Profile" },
@@ -35,15 +42,27 @@ function Header() {
   return (
     <>
       <nav class="border-b">
-        <div class="flex justify-between w-9/10 mx-auto items-center  my-3">
+        <div class="flex justify-between w-9/10 mx-auto items-center my-3">
           <Link to="/" class="font-bold text-2xl">
             We Hire Juniors
           </Link>
-          <ul class="flex justify-between w-1/5 text-gray-600 text-lg">
+          <Bars
+            class="block lg:hidden"
+            width={40}
+            hidden={40}
+            onClick={toggleMenu}
+          />
+          <ul class="hidden lg:flex justify-between items-center text-gray-600 text-lg">
             {linkList}
           </ul>
         </div>
       </nav>
+      {/* Mobile menu */}
+      {isOpen && (
+        <ul className="lg:hidden flex flex-col items-center bg-white w-full text-gray-600 text-lg py-6 border-b">
+          {linkList}
+        </ul>
+      )}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/auth/google/callback" element={<GoogleOuathLogin />} />

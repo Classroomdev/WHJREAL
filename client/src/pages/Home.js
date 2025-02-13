@@ -25,11 +25,14 @@ function Home() {
           <span class="relative whitespace-nowrap text-blue-500">Juniors</span>{" "}
           have the skills to{" "}
           <span class="relative whitespace-nowrap text-blue-500">
-            get the job done.
+            get the job.
           </span>
         </h1>
         <p class="mx-auto mt-6 max-w-2xl text-lg tracking-tight text-slate-700 text-gray-700 mb-12">
-        Unlock access to a talented pool of Junior and Mid-level professionals, or find the ideal candidate for your internship. Post your job today and connect with thousands of motivated individuals ready to bring their skills and passion to your team.
+          Unlock access to a talented pool of Junior and Mid-level
+          professionals, or find the ideal candidate for your internship. Post
+          your job today and connect with thousands of motivated individuals
+          ready to bring their skills and passion to your team.
         </p>
         <div class="flex justify-center">
           <a

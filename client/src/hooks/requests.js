@@ -1,7 +1,4 @@
-const API_URL = process.env.API_URL || "http://localhost:8080/api";
-
-console.log(API_URL);
-console.log(process.env.NODE_ENV);
+const API_URL = process.env.REACT_APP_API_URL || "http://localhost:8080/api";
 
 async function httpGetUserById(id) {
   const response = await fetch(`${API_URL}/users/${id}`);

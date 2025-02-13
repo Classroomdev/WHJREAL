@@ -12,10 +12,7 @@ function JobsIndex() {
   const [page, setPage] = useState(1);
   const [jobs, setJobs] = useState([]);
 
-  const API_URL =
-    process.env.NODE_ENV === "production"
-      ? "https://whjreal-backend.onrender.com"
-      : "http://localhost:8080";
+  const API_URL = process.env.API_URL || "http://localhost:8080";
 
   const getAllJobs = async () => {
     const response = await fetch(`${API_URL}/api/jobs/all?page=${page}`);

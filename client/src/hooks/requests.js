@@ -1,7 +1,4 @@
-const API_URL =
-  process.env.NODE_ENV === "production"
-    ? "https://whjreal-backend.onrender.com/api"
-    : "http://localhost:8080/api";
+const API_URL = process.env.API_URL || "http://localhost:8080/api";
 
 console.log(API_URL);
 console.log(process.env.NODE_ENV);

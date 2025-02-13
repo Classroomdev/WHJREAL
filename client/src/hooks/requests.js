@@ -1,4 +1,7 @@
-const API_URL = 'http://localhost:8080/api';
+const API_URL =
+  process.env.NODE_ENV === "production"
+    ? "https://whjreal-backend.onrender.com"
+    : "http://localhost:8080";
 
 async function httpGetUserById(id) {
   const response = await fetch(`${API_URL}/users/${id}`);
@@ -11,12 +14,12 @@ async function httpGetJobById(id) {
 }
 
 async function httpCreateNewJob(job) {
-  console.log('this is reaching here');
+  console.log("this is reaching here");
   try {
     return await fetch(`${API_URL}/jobs/new`, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(job),
     });
@@ -30,9 +33,9 @@ async function httpCreateNewJob(job) {
 async function httpUpdateJob(id, job) {
   try {
     return await fetch(`${API_URL}/jobs/${id}`, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(job),
     });

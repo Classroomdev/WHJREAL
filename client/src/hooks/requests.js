@@ -3,6 +3,9 @@ const API_URL =
     ? "https://whjreal-backend.onrender.com/api"
     : "http://localhost:8080/api";
 
+console.log(API_URL);
+console.log(process.env.NODE_ENV);
+
 async function httpGetUserById(id) {
   const response = await fetch(`${API_URL}/users/${id}`);
   return await response.json();

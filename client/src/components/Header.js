@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, Routes, Route, Navigate } from "react-router-dom";
+import clsx from "clsx";
 import Home from "../pages/Home";
 import Profile from "../pages/users/Profile";
 import GoogleOuathLogin from "./GoogleOuathLogin";
@@ -12,28 +13,34 @@ import Job from "../pages/jobs/Job";
 function Header() {
   const UserId = localStorage.getItem("userId");
   const id = UserId;
+
+  const links = [
+    // { to: `/users/${id}`, text: "Profile" },
+    { to: "/jobs/all", text: "Jobs", button: false },
+    { to: "/login", text: "Sign Up", button: true },
+  ];
+
+  const linkList = links.map((link) => (
+    <li
+      key={link.to}
+      class={clsx("mx-2", {
+        "bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded":
+          link.button,
+      })}
+    >
+      <Link to={link.to}>{link.text}</Link>
+    </li>
+  ));
+
   return (
     <>
       <nav class="border-b">
         <div class="flex justify-between w-9/10 mx-auto items-center  my-3">
           <Link to="/" class="font-bold text-2xl">
-            We Hire Juniors Also
+            We Hire Juniors
           </Link>
           <ul class="flex justify-between w-1/5 text-gray-600 text-lg">
-            {/* <li>
-              <Link to={`/users/${id}`}>Profile</Link>
-            </li> */}
-            <li>
-              <Link to="/jobs/all">Jobs</Link>
-            </li>
-            <li>
-              <Link
-                to="/login"
-                class="bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded"
-              >
-                Sign Up
-              </Link>
-            </li>
+            {linkList}
           </ul>
         </div>
       </nav>

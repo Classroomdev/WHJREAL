@@ -16,7 +16,11 @@ const app = express();
 
 app.use(
   cors({
-    origin: ["http://localhost:3000", "https://whjreal.onrender.com"],
+    origin: [
+      "http://localhost:3000",
+      "https://whjreal.onrender.com",
+      "https://front-end-whj.onrender.com",
+    ],
   })
 );
 
